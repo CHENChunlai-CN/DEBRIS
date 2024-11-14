@@ -45,7 +45,7 @@ for f =1:numel(files)
 %     legend('Counts', 'Gaussian Fit');
 %     title(['Gaussian Fit of ' filename(end-13:end-4)]);
 %     hold off
-    if size(find(Tracecat_frag(:,1) == 2),1) < size(Tracecat_frag(:,1) ~= 5,1)*0.25
+    if size(find(Tracecat_frag(:,1) == 2),1) < size(find(Tracecat_frag(:,1) ~= 5),1)*0.25
         fprintf('Note: too few traces of acceptor photobleaching, unreliable gamma factor\n');
     end
    fprintf(['gamma factor of ' filename(end-13:end-4) ':%f\n'],power(10,fitResult.mu));
